@@ -1,0 +1,33 @@
+
+# # # ----------- PROFILES ----------- # # #
+
+# CONFIGURE
+aws configure import --csv file://~/<PATH_TO_CSV_FILE>
+
+# LIST 
+aws configure list-profiles
+
+# # # ----------- IAM ----------- # # #
+
+# If you want to indicate a specif cli profiñle when runing a command add --profile <PROFILE_NAME>
+
+# CREATE POLICY
+aws iam create-policy --policy-name <POLICY_NAME> --policy-document file://<PATH_TO_JSON_FILE>
+
+# ATTACH POLICY
+aws iam attach-user-policy --user-name <USER_NAME> --policy-arn <RESOURCE_ARN>
+
+# LIST ATTACHED POLICIES
+aws iam list-attached-user-policies --user-name <USER_NAME>
+
+# LIST USERS
+aws iam list-users
+
+# CREATE USER
+aws iam create-user --user-name <USER_NAME>
+
+# CREATE ACCESS_KEY
+aws iam create-access-key --user-name <USER_NAME>
+
+# ACCOUNT INFO
+aws sts get-caller-identity --profile <PROFILE_NAME>
